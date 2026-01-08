@@ -4698,7 +4698,7 @@ Which solution will meet these requirements?
 - C. Use AWS Resource Access Manager to nd publicly accessible S3 buckets. Use Amazon Simple Notication Service (Amazon SNS) to invoke an AWS Lambda function when a change is detected. Deploy a Lambda function that programmatically remediates the change.
 - D. Use the S3 Block Public Access feature on the account level. Use AWS Organizations to create a service control policy (SCP) that prevents IAM users from changing the setting. Apply the SCP to the account.
 
-## Question #413
+~~## Question #413~~
 
 
 An ecommerce company is experiencing an increase in user traffic. The company's store is deployed on Amazon EC2 instances as a two-tier web application consisting of a web tier and a separate database tier. As traffic increases, the company notices that the architecture is causing signicant delays in sending timely marketing and order conrmation email to users. The company wants to reduce the time it spends resolving complex email delivery issues and minimize operational overhead.
@@ -4711,7 +4711,7 @@ What should a solutions architect do to meet these requirements?
 - D. Create a separate application tier using EC2 instances dedicated to email processing. Place the instances in an Auto Scaling group.
 
 
-## Question #414
+## Question #414 ✨
 
 A company has a business system that generates hundreds of reports each day. The business system saves the reports to a network share in CSV format. The company needs to store this data in the AWS Cloud in near-real time for analysis.
 
@@ -4747,6 +4747,9 @@ Which combination of actions should a solutions architect take to resolve this i
 - D. Create a read replica for the RDS DB instance.
 - E. Configure a Multi-AZ deployment for the RDS DB instance.
 
+## Question #417 ✨
+
+
 A company uses Amazon EC2 instances and AWS Lambda functions to run its application. The company has VPCs with public subnets and private subnets in its AWS account. The EC2 instances run in a private subnet in one of the VPCs. The Lambda functions need direct network access to the EC2 instances for the application to work.
 
 The application will run for at least 1 year. The company expects the number of Lambda functions that the application uses to increase during that time. The company wants to maximize its savings on all application resources and to keep network latency between the services low.
@@ -4758,7 +4761,7 @@ Which solution will meet these requirements?
 - C. Purchase a Compute Savings Plan. Optimize the Lambda functions' duration and memory usage, the number of invocations, and the amount of data that is transferred. Connect the Lambda functions to the private subnet that contains the EC2 instances.
 - D. Purchase a Compute Savings Plan. Optimize the Lambda functions' duration and memory usage, the number of invocations, and the amount of data that is transferred. Keep the Lambda functions in the Lambda service VPC.
 
-## Question #418
+## Question #418 ✨
 
 
 A solutions architect needs to allow team members to access Amazon S3 buckets in two different AWS accounts: a development account and a production account. The team currently has access to S3 buckets in the development account by using unique IAM users that are assigned to an IAM group that has appropriate permissions in the account.
@@ -4772,6 +4775,9 @@ Which solution will meet these requirements while complying with the principle o
 - C. Turn off the S3 Block Public Access feature on the S3 bucket in the production account.
 - D. Create a user in the production account with unique credentials for each team member.
 
+## Question #419 ✨ *Root user không được control bằng IAM*
+
+
 A company uses AWS Organizations with all features enabled and runs multiple Amazon EC2 workloads in the ap-southeast-2 Region. The company has a service control policy (SCP) that prevents any resources from being created in any other Region. A security policy requires the company to encrypt all data at rest.
 
 An audit discovers that employees have created Amazon Elastic Block Store (Amazon EBS) volumes for EC2 instances without encrypting the volumes. The company wants any new EC2 instances that any IAM user or root user launches in ap-southeast-2 to use encrypted EBS volumes. The company wants a solution that will have minimal effect on employees who create EBS volumes.
@@ -4784,7 +4790,7 @@ Which combination of steps will meet these requirements? (Choose two.)
 - D. Update the IAM policies for each account to deny the ec2:CreateVolume action when the ec2:Encrypted condition equals false.
 - E. In the Organizations management account, specify the Default EBS volume encryption setting.
 
-## Question #420
+## Question #420 ✨ *Dùng cluster để tối ưu chi phí offload read và Không cần tạo thêm read replica riêng*
 
 
 A company wants to use an Amazon RDS for PostgreSQL DB cluster to simplify time-consuming database administrative tasks for production database workloads. The company wants to ensure that its database is highly available and will provide automatic failover support in most scenarios in less than 40 seconds. The company wants to ooad reads off of the primary instance and keep costs as low as possible.
@@ -4795,6 +4801,9 @@ Which solution will meet these requirements?
 - B. Use an Amazon RDS Multi-AZ DB duster deployment Create two read replicas and point the read workload to the read replicas.
 - C. Use an Amazon RDS Multi-AZ DB instance deployment. Point the read workload to the secondary instances in the Multi-AZ pair.
 - D. Use an Amazon RDS Multi-AZ DB cluster deployment Point the read workload to the reader endpoint.
+
+~~## Question #421~~
+
 
 A company runs a highly available SFTP service. The SFTP service uses two Amazon EC2 Linux instances that run with elastic IP addresses to accept traffic from trusted IP sources on the internet. The SFTP service is backed by shared storage that is attached to the instances. User accounts are created and managed as Linux users in the SFTP servers.
 
@@ -4807,7 +4816,7 @@ Which solution will meet these requirements?
 - C. Create an Amazon S3 bucket with default encryption enabled. Create an AWS Transfer Family SFTP service with a public endpoint that allows only trusted IP addresses. Attach the S3 bucket to the SFTP service endpoint. Grant users access to the SFTP service.
 - D. Create an Amazon S3 bucket with default encryption enabled. Create an AWS Transfer Family SFTP service with a VPC endpoint that has internal access in a private subnet. Attach a security group that allows only trusted IP addresses. Attach the S3 bucket to the SFTP service endpoint. Grant users access to the SFTP service.
 
-## Question #422
+## Question #422 ✨ *Lambda không phù hợp vì model quá nặng để load mỗi lần, gây cold start chậm và tốn tài nguyên, trong khi ECS có thể giữ model trong RAM lâu dài và scale theo queue.*
 
 
 A company is developing a new machine learning (ML) model solution on AWS. The models are developed as independent microservices that fetch approximately 1 GB of model data from Amazon S3 at startup and load the data into memory. Users access the models through an asynchronous API. Users can send a request or a batch of requests and specify where the results should be sent.
@@ -4820,6 +4829,9 @@ Which design should a solutions architect recommend to meet these requirements?
 - B. Direct the requests from the API to an Application Load Balancer (ALB). Deploy the models as Amazon Elastic Container Service (Amazon ECS) services that read from an Amazon Simple Queue Service (Amazon SQS) queue. Use AWS App Mesh to scale the instances of the ECS cluster based on the SQS queue size.
 - C. Direct the requests from the API into an Amazon Simple Queue Service (Amazon SQS) queue. Deploy the models as AWS Lambda functions that are invoked by SQS events. Use AWS Auto Scaling to increase the number of vCPUs for the Lambda functions based on the SQS queue size.
 - D. Direct the requests from the API into an Amazon Simple Queue Service (Amazon SQS) queue. Deploy the models as Amazon Elastic Container Service (Amazon ECS) services that read from the queue. Enable AWS Auto Scaling on Amazon ECS for both the cluster and copies of the service based on the queue size.
+
+## Question #423
+
 
 A solutions architect wants to use the following JSON text as an identity-based policy to grant specic permissions:
 
@@ -4835,7 +4847,7 @@ Which IAM principals can the solutions architect attach this policy to? (Choose 
 - D. Amazon Elastic Container Service (Amazon ECS) resource
 - E. Amazon EC2 resource
 
-## Question #424
+~~## Question #424~~
 
 
 A company is running a custom application on Amazon EC2 On-Demand Instances. The application has frontend nodes that need to run 24 hours a day, 7 days a week and backend nodes that need to run only for a short time based on workload. The number of backend nodes varies during the day.
@@ -4849,6 +4861,8 @@ Which solution will meet these requirements MOST cost-effectively?
 - C. Use Spot Instances for the frontend nodes. Use Reserved Instances for the backend nodes.
 - D. Use Spot Instances for the frontend nodes. Use AWS Fargate for the backend nodes.
 
+## Question #425
+
 A company uses high block storage capacity to runs its workloads on premises. The company's daily peak input and output transactions per second are not more than 15,000 IOPS. The company wants to migrate the workloads to Amazon EC2 and to provision disk performance independent of storage capacity.
 
 Which Amazon Elastic Block Store (Amazon EBS) volume type will meet these requirements MOST cost-effectively?
@@ -4858,7 +4872,7 @@ Which Amazon Elastic Block Store (Amazon EBS) volume type will meet these requir
 - C. GP3 volume type
 - D. io1 volume type
 
-## Question #426
+~~## Question #426~~
 
 
 A company needs to store data from its healthcare application. The application's data frequently changes. A new regulation requires audit access at all levels of the stored data.
@@ -4872,7 +4886,7 @@ Which solution will meet these requirements?
 - C. Use Amazon S3 Transfer Acceleration to move the existing data to Amazon S3. Use AWS CloudTrail to log data events.
 - D. Use AWS Storage Gateway to move the existing data to Amazon S3. Use AWS CloudTrail to log management events.
 
-## Question #427
+~~## Question #427~~
 
 
 A solutions architect is implementing a complex Java application with a MySQL database. The Java application must be deployed on Apache Tomcat and must be highly available.
@@ -4884,14 +4898,21 @@ What should the solutions architect do to meet these requirements?
 - C. Migrate the database to Amazon ElastiCache. Configure the ElastiCache security group to allow access from the application.
 - D. Launch an Amazon EC2 instance. Install a MySQL server on the EC2 instance. Configure the application on the server. Create an AMI. Use the AMI to create a launch template with an Auto Scaling group.
 
+
+~~## Question #428~~
+
+
 A serverless application uses Amazon API Gateway, AWS Lambda, and Amazon DynamoDB. The Lambda function needs permissions to read and write to the DynamoDB table.
 
 Which solution will give the Lambda function access to the DynamoDB table MOST securely?
 
-- A. Create an IAM user with programmatic access to the Lambda function. Attach a policy to the user that allows read and write access to the DynamoDB table. Store the access\_key\_id and secret\_access\_key parameters as part of the Lambda environment variables. Ensure that other AWS users do not have read and write access to the Lambda function conguration.
+- A. Create an IAM user with programmatic access to the Lambda function. Attach a policy to the user that allows read and write access to the DynamoDB table. Store the access_key_id and secret_access_key parameters as part of the Lambda environment variables. Ensure that other AWS users do not have read and write access to the Lambda function conguration.
 - B. Create an IAM role that includes Lambda as a trusted service. Attach a policy to the role that allows read and write access to the DynamoDB table. Update the conguration of the Lambda function to use the new role as the execution role.
-- C. Create an IAM user with programmatic access to the Lambda function. Attach a policy to the user that allows read and write access to the DynamoDB table. Store the access\_key\_id and secret\_access\_key parameters in AWS Systems Manager Parameter Store as secure string parameters. Update the Lambda function code to retrieve the secure string parameters before connecting to the DynamoDB table.
+- C. Create an IAM user with programmatic access to the Lambda function. Attach a policy to the user that allows read and write access to the DynamoDB table. Store the access_key_id and secret_access_key parameters in AWS Systems Manager Parameter Store as secure string parameters. Update the Lambda function code to retrieve the secure string parameters before connecting to the DynamoDB table.
 - D. Create an IAM role that includes DynamoDB as a trusted service. Attach a policy to the role that allows read and write access from the Lambda function. Update the code of the Lambda function to attach to the new role as an execution role.
+
+## Question #429 
+
 
 The following IAM policy is attached to an IAM group. This is the only policy applied to the group.
 
@@ -4905,6 +4926,9 @@ What are the effective IAM permissions of this policy for group members?
 - B. Group members are denied any Amazon EC2 permissions in the us-east-1 Region unless they are logged in with multi-factor authentication (MFA).
 - C. Group members are allowed the ec2:StopInstances and ec2:TerminateInstances permissions for all Regions when logged in with multifactor authentication (MFA). Group members are permitted any other Amazon EC2 action.
 - D. Group members are allowed the ec2:StopInstances and ec2:TerminateInstances permissions for the us-east-1 Region only when logged in with multi-factor authentication (MFA). Group members are permitted any other Amazon EC2 action within the us-east-1 Region.
+
+## Question #430
+
 
 A manufacturing company has machine sensors that upload .csv files to an Amazon S3 bucket. These .csv files must be converted into images and must be made available as soon as possible for the automatic generation of graphical reports.
 
@@ -4942,6 +4966,8 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - C. Use a pre-built ML Amazon Machine Image (AMI) from the AWS Marketplace to build and train models. Use Amazon OpenSearch Service to visualize the data.
 - D. Use Amazon QuickSight to build and train models by using calculated elds. Use Amazon QuickSight to visualize the data.
 
+## Question #433
+
 A company is running its production and nonproduction environment workloads in multiple AWS accounts. The accounts are in an organization in AWS Organizations. The company needs to design a solution that will prevent the modication of cost usage tags.
 
 Which solution will meet these requirements?
@@ -4974,6 +5000,9 @@ Which solution will migrate the database MOST cost-effectively?
 - B. Order an AWS Snowmobile vehicle. Use AWS Database Migration Service (AWS DMS) with AWS Schema Conversion Tool (AWS SCT) to migrate the database with ongoing changes. Send the Snowmobile vehicle back to AWS to nish the migration and continue the ongoing replication.
 - C. Order an AWS Snowball Edge Compute Optimized with GPU device. Use AWS Database Migration Service (AWS DMS) with AWS Schema Conversion Tool (AWS SCT) to migrate the database with ongoing changes. Send the Snowball device to AWS to nish the migration and continue the ongoing replication
 - D. Order a 1 GB dedicated AWS Direct Connect connection to establish a connection with the data center. Use AWS Database Migration Service (AWS DMS) with AWS Schema Conversion Tool (AWS SCT) to migrate the database with replication of ongoing changes.
+
+## Question #436
+
 
 A company moved its on-premises PostgreSQL database to an Amazon RDS for PostgreSQL DB instance. The company successfully launched a new product. The workload on the database has increased. The company wants to accommodate the larger workload without adding infrastructure.
 
@@ -5008,6 +5037,9 @@ What is the MOST secure way for the company to share the database with the audit
 - C. Copy a snapshot of the database to an Amazon S3 bucket. Create an IAM user. Share the user's keys with the auditor to grant access to the object in the S3 bucket.
 - D. Create an encrypted snapshot of the database. Share the snapshot with the auditor. Allow access to the AWS Key Management Service (AWS KMS) encryption key.
 
+## Question #439
+
+
 A solutions architect congfiured a VPC that has a small range of IP addresses. The number of Amazon EC2 instances that are in the VPC is increasing, and there is an insucient number of IP addresses for future workloads.
 
 Which solution resolves this issue with the LEAST operational overhead?
@@ -5017,7 +5049,7 @@ Which solution resolves this issue with the LEAST operational overhead?
 - C. Use AWS Transit Gateway to add a transit gateway and connect a second VPC with the rst VPUpdate the routes of the transit gateway and VPCs. Create new resources in the subnets of the second VPC.
 - D. Create a second VPC. Create a Site-to-Site VPN connection between the rst VPC and the second VPC by using a VPN-hosted solution on Amazon EC2 and a virtual private gateway. Update the route between VPCs to the traffic through the VPN. Create new resources in the subnets of the second VPC.
 
-## Question #440
+## Question #440 ✨
 
 
 A company used an Amazon RDS for MySQL DB instance during application testing. Before terminating the DB instance at the end of the test cycle, a solutions architect created two backups. The solutions architect created the rst backup by using the mysqldump utility to create a database dump. The solutions architect created the second backup by enabling the nal DB snapshot option on RDS termination.
@@ -5044,6 +5076,10 @@ What should a solutions architect do to redesign the application MOST cost-effec
 - C. Create an Amazon CloudFront distribution to host the static web contents from an Amazon S3 bucket.
 - D. Create an AWS Lambda function behind an Amazon API Gateway API to host the static website contents.
 
+
+## Question #442
+
+
 A company stores several petabytes of data across multiple AWS accounts. The company uses AWS Lake Formation to manage its data lake. The company's data science team wants to securely share selective data from its accounts with the company's engineering team for analytical purposes.
 
 Which solution will meet these requirements with the LEAST operational overhead?
@@ -5053,7 +5089,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - C. Use AWS Data Exchange to privately publish the required data to the required engineering team accounts.
 - D. Use Lake Formation tag-based access control to authorize and grant cross-account permissions for the required data to the engineering team accounts.
 
-## Question #443
+## Question #443 ✨ *Transfer Acceleration*
 
 
 A company wants to host a scalable web application on AWS. The application will be accessed by users from different geographic regions of the world. Application users will be able to download and upload unique data up to gigabytes in size. The development team wants a cost-effective solution to minimize upload and download latency and maximize performance.
@@ -5079,6 +5115,9 @@ What should the solutions architect do to maximize reliability of the applicatio
 - C. Create an additional DB instance along with an Amazon API Gateway and an AWS Lambda function. Configure the application to invoke the Lambda function through API Gateway. Have the Lambda function write the data to the two DB instances.
 - D. Place the EC2 instances in an EC2 Auto Scaling group that has multiple subnets located in multiple Availability Zones. Use Spot Instances instead of On-Demand Instances. Set up Amazon CloudWatch alarms to monitor the health of the instances Update the DB instance to be Multi-AZ, and enable deletion protection.
 
+## Question #445
+
+
 A company is storing 700 terabytes of data on a large network-attached storage (NAS) system in its corporate data center. The company has a hybrid environment with a 10 Gbps AWS Direct Connect connection.
 
 After an audit from a regulator, the company has 90 days to move the data to the cloud. The company needs to move the data eciently and without disruption. The company still needs to be able to access and update the data during the transfer window.
@@ -5090,7 +5129,7 @@ Which solution will meet these requirements?
 - C. Use rsync to copy the data directly from local storage to a designated Amazon S3 bucket over the Direct Connect connection.
 - D. Back up the data on tapes. Ship the tapes to an AWS data center. Mount a target Amazon S3 bucket on the on-premises file system.
 
-## Question #446
+## Question #446 ✨ *using S3 Batch Operations*
 
 
 A company stores data in PDF format in an Amazon S3 bucket. The company must follow a legal requirement to retain all new and existing data in Amazon S3 for 7 years.
@@ -5102,7 +5141,7 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - C. Turn on S3 Object Lock with compliance retention mode for the S3 bucket. Set the retention period to expire after 7 years. Recopy all existing objects to bring the existing data into compliance.
 - D. Turn on S3 Object Lock with compliance retention mode for the S3 bucket. Set the retention period to expire after 7 years. Use S3 Batch Operations to bring the existing data into compliance.
 
-## Question #447
+## Question #447 
 
 
 A company has a stateless web application that runs on AWS Lambda functions that are invoked by Amazon API Gateway. The company wants to deploy the application across multiple AWS Regions to provide Regional failover capabilities.
@@ -5113,6 +5152,8 @@ What should a solutions architect do to route traffic to multiple Regions?
 - B. Create an Amazon CloudFront distribution with an origin for each Region. Use CloudFront health checks to route traffic.
 - C. Create a transit gateway. Attach the transit gateway to the API Gateway endpoint in each Region. Configure the transit gateway to route requests.
 - D. Create an Application Load Balancer in the primary Region. Set the target group to point to the API Gateway endpoint hostnames in each Region.
+
+## Question #448 ✨
 
 A company has two VPCs named Management and Production. The Management VPC uses VPNs through a customer gateway to connect to a single device in the data center. The Production VPC uses a virtual private gateway with two attached AWS Direct Connect connections. The Management and Production VPCs both use a single VPC peering connection to allow communication between the applications.
 
@@ -5135,7 +5176,7 @@ Which solution will help the company migrate the database to AWS MOST cost-effec
 - C. Migrate the database to an Amazon EC2 Amazon Machine Image (AMI) for Oracle. Customize the database settings to support third-party features.
 - D. Migrate the database to Amazon RDS for PostgreSQL by rewriting the application code to remove dependency on Oracle APEX.
 
-## Question #450
+## Question #450 ✨
 
 A company has a three-tier web application that is in a single server. The company wants to migrate the application to the AWS Cloud. The company also wants the application to align with the AWS Well-Architected Framework and to be consistent with AWS recommended best practices for security, scalability, and resiliency.
 
@@ -5148,6 +5189,7 @@ Which combination of solutions will meet these requirements? (Choose three.)
 - E. Use Elastic Load Balancers in front of the web tier. Control access by using security groups containing references to each layer's security groups.
 - F. Use an Amazon RDS database Multi-AZ cluster deployment in private subnets. Allow database access only from application tier security groups.
 
+## Question #451
 
 A company is migrating its applications and databases to the AWS Cloud. The company will use Amazon Elastic Container Service (Amazon ECS), AWS Direct Connect, and Amazon RDS.
 
