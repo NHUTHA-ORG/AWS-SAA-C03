@@ -1,4 +1,4 @@
-$SERVICE = SageMaker
+$SERVICE = AppFlow
 
 Act as an AWS Solutions Architect & AWS Trainer.
 

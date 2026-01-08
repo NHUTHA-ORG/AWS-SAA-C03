@@ -5202,7 +5202,7 @@ Which activities will be managed by the company's operational team? (Choose thre
 - E. Ensure the physical security of the Amazon RDS infrastructure in the data center
 - F. Encryption of the data that moves in transit through Direct Connect
 
-## Question #452
+## Question #452 ✨
 
 
 A company runs a Java-based job on an Amazon EC2 instance. The job runs every hour and takes 10 seconds to run. The job runs on a scheduled interval and consumes 1 GB of memory. The CPU utilization of the instance is low except for short surges during which the job uses the maximum CPU available. The company wants to optimize the costs to run the job.
@@ -5227,7 +5227,7 @@ Which solution will meet these requirements?
 - C. Use Amazon S3 File Gateway to create the backup. Configure the appropriate S3 Lifecycle management.
 - D. Use AWS Backup to create a backup vault that has a vault lock in compliance mode. Create the required backup plan.
 
-## Question #454
+## Question #454 ✨
 
 A company has resources across multiple AWS Regions and accounts. A newly hired solutions architect discovers a previous employee did not provide details about the resources inventory. The solutions architect needs to build and map the relationship details of the various workloads across all accounts.
 
@@ -5238,7 +5238,7 @@ Which solution will meet these requirements in the MOST operationally ecient way
 - C. Use Workload Discovery on AWS to generate architecture diagrams of the workloads.
 - D. Use AWS X-Ray to view the workload details. Build architecture diagrams with relationships.
 
-## Question #455
+## Question #455 ✨
 
 
 A company uses AWS Organizations. The company wants to operate some of its AWS accounts with different budgets. The company wants to receive alerts and automatically prevent provisioning of additional resources on AWS accounts when the allocated budget threshold is met during a specic period.
@@ -5263,6 +5263,7 @@ Which solution will meet these requirements MOST cost-effectively?
 - C. Create a backup plan by using AWS Backup. Configure cross-Region backup to the second Region for the EC2 instances.
 - D. Deploy a similar number of EC2 instances in the second Region. Use AWS DataSync to transfer the data from the source Region to the second Region.
 
+## Question #457
 
 A company that uses AWS is building an application to transfer data to a product manufacturer. The company has its own identity provider (IdP). The company wants the IdP to authenticate application users while the users use the application to transfer data. The company must use Applicability Statement 2 (AS2) protocol.
 
@@ -5286,7 +5287,7 @@ Which additional combination ofAWS services will meet these requirements with th
 - D. Amazon DynamoDB
 - E. Amazon Elastic Kubernetes Services (Amazon EKS)
 
-## Question #459
+## Question #459 ✨
 
 
 A company uses AWS Organizations to run workloads within multiple AWS accounts. A tagging policy adds department tags to AWS resources when the company creates tags.
@@ -5299,6 +5300,9 @@ Which solution meets these requirements in the MOST operationally ecient way?
 - B. From the Organizations management account billing console, activate an AWS-dened cost allocation tag named department. Create one cost report in Cost Explorer grouping by tag name, and lter by EC2.
 - C. From the Organizations member account billing console, activate a user-dened cost allocation tag named department. Create one cost report in Cost Explorer grouping by the tag name, and lter by EC2.
 - D. From the Organizations member account billing console, activate an AWS-dened cost allocation tag named department. Create one cost report in Cost Explorer grouping by tag name, and lter by EC2.
+
+## Question #460
+
 
 A company wants to securely exchange data between its software as a service (SaaS) application Salesforce account and Amazon S3. The company must encrypt the data at rest by using AWS Key Management Service (AWS KMS) customer managed keys (CMKs). The company must also encrypt the data in transit. The company has enabled API access for the Salesforce account.
 
