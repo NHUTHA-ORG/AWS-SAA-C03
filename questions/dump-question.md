@@ -5335,6 +5335,9 @@ What should a solutions architect do to write the orders reliably to the databas
 - C. Write orders to Amazon Simple Notication Service (Amazon SNS). Subscribe the database endpoint to the SNS topic. Use EC2 instances in an Auto Scaling group behind an Application Load Balancer to read from the SNS topic.
 - D. Write orders to an Amazon Simple Queue Service (Amazon SQS) queue when the EC2 instance reaches CPU threshold limits. Use scheduled scaling of EC2 instances in an Auto Scaling group behind an Application Load Balancer to read from the SQS queue and process orders into the database.
 
+## Question #463
+
+
 An IoT company is releasing a mattress that has sensors to collect data about a user's sleep. The sensors will send data to an Amazon S3 bucket. The sensors collect approximately 2 MB of data every night for each mattress. The company must process and summarize the data for each mattress. The results need to be available as soon as possible. Data processing will require 1 GB of memory and will nish within 30 seconds.
 
 Which solution will meet these requirements MOST cost-effectively?
@@ -5356,7 +5359,7 @@ Which solution meets these requirements?
 - C. Create a read-only replica of the PostgreSQL database in another Availability Zone. Use Amazon Route 53 weighted record sets to distribute requests across the databases.
 - D. Place the RDS for PostgreSQL database in an Amazon EC2 Auto Scaling group with a minimum group size of two. Use Amazon Route 53 weighted record sets to distribute requests across instances.
 
-## Question #465
+## Question #465 ✨ *Multi-Attach*
 
 
 A company is developing an application to support customer demands. The company wants to deploy the application on multiple Amazon EC2 Nitro-based instances within the same Availability Zone. The company also wants to give the application the ability to write to multiple block storage volumes in multiple EC2 Nitro-based instances simultaneously to achieve higher application availability.
@@ -5368,6 +5371,9 @@ Which solution will meet these requirements?
 - C. Use Provisioned IOPS SSD (io2) EBS volumes with Amazon Elastic Block Store (Amazon EBS) Multi-Attach
 - D. Use General Purpose SSD (gp2) EBS volumes with Amazon Elastic Block Store (Amazon EBS) Multi-Attach
 
+
+## Question #466
+
 A company designed a stateless two-tier application that uses Amazon EC2 in a single Availability Zone and an Amazon RDS Multi-AZ DB instance. New company management wants to ensure the application is highly available.
 
 What should a solutions architect do to meet this requirement?
@@ -5377,7 +5383,7 @@ What should a solutions architect do to meet this requirement?
 - C. Configure the application to use Amazon Route 53 latency-based routing to feed requests to the application
 - D. Configure Amazon Route 53 rules to handle incoming requests and create a Multi-AZ Application Load Balancer
 
-## Question #467
+## Question #467 ✨ *Enable discount sharing in the Organizations management account*
 
 
 A company uses AWS Organizations. A member account has purchased a Compute Savings Plan. Because of changes in the workloads inside the member account, the account no longer receives the full benet of the Compute Savings Plan commitment. The company uses less than 50% of its purchased compute power.
@@ -5399,6 +5405,9 @@ Which solution will meet these requirements?
 - C. Design a WebSocket API by using Amazon API Gateway. Host the application in Amazon Elastic Container Service (Amazon ECS) in a private subnet. Create a security group for API Gateway to access Amazon ECS.
 - D. Design a REST API by using Amazon API Gateway. Host the application in Amazon Elastic Container Service (Amazon ECS) in a private subnet. Create a security group for API Gateway to access Amazon ECS.
 
+## Question #469
+
+
 A company stores raw collected data in an Amazon S3 bucket. The data is used for several types of analytics on behalf of the company's customers. The type of analytics requested determines the access pattern on the S3 objects.
 
 The company cannot predict or control the access pattern. The company wants to reduce its S3 costs.
@@ -5410,7 +5419,7 @@ Which solution will meet these requirements?
 - C. Use S3 Lifecycle rules to transition objects from S3 Standard to S3 Intelligent-Tiering
 - D. Use S3 Inventory to identify and transition objects that have not been accessed from S3 Standard to S3 Intelligent-Tiering
 
-## Question #470
+## Question #470 
 
 
 A company has applications hosted on Amazon EC2 instances with IPv6 addresses. The applications must initiate communications with other external applications using the internet. However the company's security policy states that any external service cannot initiate a connection to the EC2 instances.
@@ -5433,6 +5442,9 @@ Which solution will meet these requirements?
 - B. Enable S3 Transfer Acceleration for the S3 bucket
 - C. Create a gateway VPC endpoint for Amazon S3. Associate this endpoint with all route tables in the VPC
 - D. Create an interface endpoint for Amazon S3 in the VPC. Associate this endpoint with all route tables in the VPC
+
+# Question #472
+
 
 A company has a mobile chat application with a data store based in Amazon DynamoDB. Users would like new messages to be read with as little latency as possible. A solutions architect needs to design an optimal solution that requires minimal application changes.
 
@@ -5465,6 +5477,8 @@ Which solution will meet these requirements with the LEAST amount of administrat
 - C. Use AWS Transit Gateway to manage VPC communication in a single Region and Transit Gateway peering across Regions to manage VPC communications.
 - D. Use AWS PrivateLink across all Regions to connect VPCs across Regions and manage VPC communications
 
+## Question #475 ✨ *“Shared file system for ECS + cross-region recovery via AWS Backup → EFS”*
+
 A company is designing a containerized application that will use Amazon Elastic Container Service (Amazon ECS). The application needs to access a shared file system that is highly durable and can recover data to another AWS Region with a recovery point objective (RPO) of 8 hours. The file system needs to provide a mount target m each Availability Zone within a Region.
 
 A solutions architect wants to use AWS Backup to manage the replication to another Region.
@@ -5476,7 +5490,7 @@ Which solution will meet these requirements?
 - C. Amazon Elastic File System (Amazon EFS) with the Standard storage class
 - D. Amazon FSx for OpenZFS
 
-## Question #476
+## Question #476 ✨
 
 
 A company is expecting rapid growth in the near future. A solutions architect needs to configure existing users and grant permissions to new users on AWS. The solutions architect has decided to create IAM groups. The solutions architect will add the new users to IAM groups based on department.
@@ -5487,6 +5501,8 @@ Which additional action is the MOST secure way to grant permissions to the new u
 - B. Create IAM roles that have least privilege permission. Attach the roles to the IAM groups
 - C. Create an IAM policy that grants least privilege permission. Attach the policy to the IAM groups
 - D. Create IAM roles. Associate the roles with a permissions boundary that denes the maximum permissions
+
+## Question #477
 
 A group requires permissions to list an Amazon S3 bucket and delete objects from that bucket. An administrator has created the following IAM policy to provide access to the bucket and applied that policy to the group. The group is not able to delete objects in the bucket. The company follows least-privilege access rules.
 
