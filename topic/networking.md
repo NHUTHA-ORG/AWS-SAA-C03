@@ -40,6 +40,10 @@ Internet
   - `0.0.0.0/0 -> IGW`
   - (tuỳ chọn dual-stack) `::/0 -> IGW`
 
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-01)
+
 ---
 
 ### 2. Single VPC – Public + Private
@@ -74,6 +78,10 @@ Internet
   - `0.0.0.0/0 -> IGW`
 - Private Subnet RT
   - `0.0.0.0/0 -> NAT Gateway`
+
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-02)
 
 ---
 
@@ -122,6 +130,10 @@ Internet
 - Private Subnet RT (mỗi AZ)
   - `0.0.0.0/0 -> NAT Gateway (cùng AZ)`
 
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-03)
+
 ---
 
 # 2️⃣ INTERNET ACCESS PATTERNS
@@ -158,6 +170,10 @@ Internet
 - Subnet chứa EC2 (private)
   - `0.0.0.0/0 -> NAT Gateway`
 
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-04)
+
 ---
 
 ### 5. Private-only (No Internet)
@@ -190,6 +206,10 @@ On-prem (192.168.0.0/16)
 - Private Subnet RT
   - `192.168.0.0/16 -> VGW/TGW`
   - (không có) `0.0.0.0/0 -> IGW/NAT`
+
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-05)
 
 ---
 
@@ -226,6 +246,10 @@ Internet  X
   - `0.0.0.0/0 -> NAT Gateway` (nếu cần internet egress)
   - `pl-<S3/DDB> -> Gateway Endpoint` (nếu dùng)
 
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-06)
+
 ---
 
 ### 7. IPv6-only / Dual-stack
@@ -257,6 +281,10 @@ IPv4 egress (nếu cần): Workload -> NAT GW -> IGW -> IPv4 Internet
 - Private Subnet RT
   - `::/0 -> Egress-only IGW`
   - (tuỳ chọn) `0.0.0.0/0 -> NAT Gateway`
+
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-07)
 
 ---
 
@@ -292,6 +320,10 @@ On-prem (192.168.0.0/16)
   - `192.168.0.0/16 -> VGW/TGW`
 - (tuỳ chọn) Route propagation bật trên route table (nếu dùng BGP)
 
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-08)
+
 ---
 
 ### 9. Client VPN
@@ -325,6 +357,10 @@ Remote User
 - VPC Subnet RT
   - Thường không cần route đặc biệt (đi theo `local` trong VPC)
 
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-09)
+
 ---
 
 ### 10. Direct Connect
@@ -357,6 +393,10 @@ On-prem (192.168.0.0/16)
   - `192.168.0.0/16 -> VGW/TGW`
 - (nếu dùng BGP) routes có thể được propagated tự động
 
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-10)
+
 ---
 
 ### 11. VPN backup cho Direct Connect
@@ -385,6 +425,10 @@ On-prem ---------|  VPN (backup)     |----+
 
 - VPC Subnet RT
   - `192.168.0.0/16 -> VGW/TGW` (1 route; path selection do BGP/propagation)
+
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-11)
 
 ---
 
@@ -415,6 +459,10 @@ On-prem ---------|  VPN (backup)     |----+
 - VPC B route table(s)
   - `10.0.0.0/16 -> pcx-...`
 
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-12)
+
 ---
 
 ### 13. VPC Peering mesh
@@ -439,6 +487,10 @@ On-prem ---------|  VPN (backup)     |----+
 **Routing table records (nếu có)**
 
 - Mỗi VPC phải có route tới CIDR của mọi VPC còn lại qua đúng `pcx-...`
+
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-13)
 
 ---
 
@@ -476,6 +528,10 @@ On-prem ---------|  VPN (backup)     |----+
   - `Spoke-2 CIDR -> attachment(spoke-2)`
   - `Hub CIDR -> attachment(hub)`
 
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-14)
+
 ---
 
 ### 15. Transit Gateway + On-prem
@@ -509,6 +565,10 @@ On-prem 192.168.0.0/16 <--VPN/DX--> | TGW |
   - `On-prem CIDR(s) -> VPN/DX attachment`
   - `VPC CIDR(s) -> VPC attachments`
 
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-15)
+
 ---
 
 ### 16. Shared Services VPC
@@ -540,6 +600,10 @@ On-prem 192.168.0.0/16 <--VPN/DX--> | TGW |
 - Shared Services VPC subnet RTs
   - `App VPC CIDR(s) -> TGW`
 
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-16)
+
 ---
 
 ### 17. Isolated VPC per workload
@@ -563,6 +627,10 @@ On-prem 192.168.0.0/16 <--VPN/DX--> | TGW |
 
 - Không bắt buộc có route đặc biệt (nếu thật sự isolated)
 - Nếu kết nối qua TGW: `Other CIDR(s) -> TGW`
+
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-17)
 
 ---
 
@@ -593,6 +661,10 @@ On-prem 192.168.0.0/16 <--VPN/DX--> | TGW |
   - `Corporate CIDR / Other VPC CIDR(s) -> TGW`
 - Trên TGW route table (central)
   - `VPC CIDR(s) -> đúng attachment`
+
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-18)
 
 ---
 
@@ -627,6 +699,10 @@ On-prem 192.168.0.0/16 <--VPN/DX--> | TGW |
   - Public/NAT subnets: `0.0.0.0/0 -> IGW`
   - Return traffic tới spoke: `Spoke CIDR(s) -> TGW`
 
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-19)
+
 ---
 
 ### 20. Centralized ingress VPC
@@ -659,6 +735,10 @@ Internet
 - TGW route table
   - `Spoke CIDR(s) -> spoke attachments`
   - `Ingress CIDR -> ingress attachment`
+
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-20)
 
 ---
 
@@ -693,6 +773,10 @@ Internet
   - `pl-<S3>  -> vpce-gw` (Gateway Endpoint)
   - `pl-<DDB> -> vpce-gw` (Gateway Endpoint)
 
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-21)
+
 ---
 
 ### 22. Interface VPC Endpoint (PrivateLink)
@@ -723,6 +807,10 @@ Internet
 - Thường không cần thêm route trong route table (đi qua ENI trong VPC)
 - (gợi ý) bật Private DNS để app gọi bằng hostname chuẩn
 
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-22)
+
 ---
 
 ### 23. Private API Gateway
@@ -752,6 +840,10 @@ Internet
 
 - Không cần thêm route table record (dùng Interface Endpoint)
 
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-23)
+
 ---
 
 ### 24. Private ALB + PrivateLink
@@ -777,6 +869,10 @@ Internet
 **Routing table records (nếu có)**
 
 - Không cần route table record đặc biệt (PrivateLink dùng ENI/local routing)
+
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-24)
 
 ---
 
@@ -818,6 +914,10 @@ Internet
 - Private subnet RT
   - `0.0.0.0/0 -> NAT Gateway` (nếu instance cần outbound)
 
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-25)
+
 ---
 
 ### 26. SSM Session Manager only
@@ -850,6 +950,10 @@ Admin -> AWS Console/CLI
 - Nếu dùng Interface Endpoint: không cần route table record đặc biệt
 - Nếu không dùng endpoint: private subnet thường cần `0.0.0.0/0 -> NAT Gateway`
 
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-26)
+
 ---
 
 ### 27. Network Firewall centralized
@@ -880,6 +984,10 @@ Admin -> AWS Console/CLI
   - `Spoke CIDR(s) -> TGW` (đường về)
 - Các subnet trong inspection VPC có thể route `0.0.0.0/0` qua firewall endpoint
 
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-27)
+
 ---
 
 ### 28. Firewall appliance (Palo Alto, Fortinet)
@@ -909,6 +1017,10 @@ Admin -> AWS Console/CLI
   - `0.0.0.0/0 -> firewall-eni (next hop)`
   - `Spoke CIDR(s) -> TGW`
 
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-28)
+
 ---
 
 ### 29. NACL-based isolation
@@ -931,6 +1043,10 @@ Admin -> AWS Console/CLI
 **Routing table records (nếu có)**
 
 - Không có route đặc biệt (NACL là layer filtering; route table không đổi)
+
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-29)
 
 ---
 
@@ -960,6 +1076,10 @@ Admin -> AWS Console/CLI
 **Routing table records (nếu có)**
 
 - Không có route đặc biệt (SG là stateful filtering; route table không đổi)
+
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-30)
 
 ---
 
@@ -996,6 +1116,10 @@ Internet
   - `0.0.0.0/0 -> NAT Gateway` (nếu cần outbound)
   - (tuỳ chọn) `pl-<S3/DDB> -> Gateway Endpoint`
 
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-31)
+
 ---
 
 ### 32. NLB → EC2 (TCP/UDP)
@@ -1027,6 +1151,10 @@ Internet (TCP/UDP)
 - Nếu targets ở private subnets và cần outbound
   - `0.0.0.0/0 -> NAT Gateway`
 
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-32)
+
 ---
 
 ### 33. ALB + WAF
@@ -1055,6 +1183,10 @@ Internet
 **Routing table records (nếu có)**
 
 - Thường giống mô hình ALB public: `0.0.0.0/0 -> IGW` ở public subnets
+
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-33)
 
 ---
 
@@ -1091,6 +1223,10 @@ Users (global)
 - Không có route đặc biệt do CloudFront tạo ra
 - Nếu ALB public: public subnet RT có `0.0.0.0/0 -> IGW`
 
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-34)
+
 ---
 
 ### 35. CloudFront → S3 (private)
@@ -1116,6 +1252,10 @@ Users
 **Routing table records (nếu có)**
 
 - Không áp dụng route table VPC (S3 + CloudFront không cần route table)
+
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-35)
 
 ---
 
@@ -1147,6 +1287,10 @@ Primary Region                     Secondary Region
 
 - Mỗi region dùng route table nội bộ như các pattern VPC tương ứng (public/private/NAT)
 
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-36)
+
 ---
 
 ### 37. Active–Active Multi-Region
@@ -1174,6 +1318,10 @@ Region A                           Region B
 
 - Tương tự: route table phụ thuộc mỗi VPC design (thường public ALB + private app + NAT)
 
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-37)
+
 ---
 
 ### 38. Cross-region VPC Peering
@@ -1197,6 +1345,10 @@ Region A                          Region B
   - `10.1.0.0/16 -> pcx-... (inter-region)`
 - VPC B route table(s)
   - `10.0.0.0/16 -> pcx-... (inter-region)`
+
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-38)
 
 ---
 
@@ -1226,6 +1378,10 @@ Region A                                     Region B
   - `Region B CIDR(s) -> tgw-peering attachment`
 - TGW-B route table
   - `Region A CIDR(s) -> tgw-peering attachment`
+
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-39)
 
 ---
 
@@ -1262,6 +1418,10 @@ On-prem site
   - `On-prem local CIDR(s) -> Local Gateway (LGW)` (nếu cần local routing)
   - `0.0.0.0/0 -> NAT/IGW (trong region)` (nếu egress đi AWS)
 
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-40)
+
 ---
 
 ### 41. Local Zones
@@ -1282,6 +1442,10 @@ AWS Region                              Local Zone
 **Routing table records (nếu có)**
 
 - Tương tự subnet thường: public subnet có `0.0.0.0/0 -> IGW`; private subnet có `0.0.0.0/0 -> NAT`
+
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-41)
 
 ---
 
@@ -1311,6 +1475,10 @@ AWS Region                              Local Zone
 - Wavelength subnet RT (thường dùng Carrier Gateway)
   - `0.0.0.0/0 -> Carrier Gateway (cagw)`
 
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-42)
+
 ---
 
 ### 43. Dedicated tenancy VPC
@@ -1330,6 +1498,10 @@ AWS Region                              Local Zone
 **Routing table records (nếu có)**
 
 - Không có route đặc biệt (tenancy không ảnh hưởng route table)
+
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-43)
 
 ---
 
@@ -1359,6 +1531,10 @@ Your Public IP Range (BYOIP)
 **Routing table records (nếu có)**
 
 - Không có route table record mới (BYOIP là IP management; route vẫn `0.0.0.0/0 -> IGW`)
+
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-44)
 
 ---
 
@@ -1400,6 +1576,10 @@ DB (isolated) -> (no direct internet)
   - `0.0.0.0/0 -> NAT Gateway`
 - DB/Isolated subnet RT
   - (khuyến nghị) không có `0.0.0.0/0` (chỉ `local` + routes nội bộ nếu cần)
+
+**AWS CLI setup (tham khảo)**
+
+- Xem: [aws-cli/networking-setup.md](aws-cli/networking-setup.md#muc-45)
 
 ---
 
