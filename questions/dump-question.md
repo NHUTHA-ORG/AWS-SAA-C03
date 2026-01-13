@@ -3389,6 +3389,9 @@ What should a solutions architect do to meet these requirements MOST cost-effect
 - C. Migrate the application layer to Amazon EC2 Reserved Instances. Migrate the data storage layer to Amazon Aurora Reserved Instances.
 - D. Migrate the application layer to Amazon EC2 On-Demand Instances. Migrate the data storage layer to Amazon RDS Reserved Instances.
 
+
+## Question #301
+
 A university research laboratory needs to migrate 30 TB of data from an on-premises Windows file server to Amazon FSx for Windows File Server. The laboratory has a 1 Gbps network link that many other departments in the university share.
 
 The laboratory wants to implement a data migration service that will maximize the performance of the data transfer. However, the laboratory needs to be able to control the amount of bandwidth that the service uses to minimize the impact on other departments. The data migration must take place within the next 5 days.
@@ -3427,6 +3430,9 @@ What should a solutions architect recommend?
 - C. Use Amazon EC2 Auto Scaling with simple scaling policies to scale when ECS metric breaches trigger an Amazon CloudWatch alarm.
 - D. Use AWS Application Auto Scaling with target tracking policies to scale when ECS metric breaches trigger an Amazon CloudWatch alarm.
 
+## Question #304
+
+
 A company recently created a disaster recovery site in a different AWS Region. The company needs to transfer large amounts of data back and forth between NFS file systems in the two Regions on a periodic basis.
 
 Which solution will meet these requirements with the LEAST operational overhead?
@@ -3459,6 +3465,9 @@ Which solution meets these requirements?
 - B. Launch all EC2 instances in different Availability Zones within the same AWS Region. Specify a placement group with partition strategy when launching EC2 instances.
 - C. Deploy an Auto Scaling group to launch EC2 instances in different Availability Zones based on a network utilization target.
 - D. Deploy an Auto Scaling group with a step scaling policy to launch EC2 instances in different Availability Zones.
+
+## Question #307
+
 
 A company that primarily runs its application servers on premises has decided to migrate to AWS. The company wants to minimize its need to scale its Internet Small Computer Systems Interface (iSCSI) storage on premises. The company wants only its recently accessed data to remain stored locally.
 
@@ -3655,6 +3664,9 @@ Which system architecture should the solutions architect recommend?
 - B. Create an HTTPS endpoint in Amazon API Gateway. Configure the API Gateway endpoint to invoke an AWS Lambda function to process the messages and save the results to an Amazon DynamoDB table.
 - C. Use Amazon Route 53 to direct incoming sensor messages to an AWS Lambda function. Configure the Lambda function to process the messages and save the results to an Amazon DynamoDB table.
 - D. Create a gateway VPC endpoint for Amazon S3. Configure a Site-to-Site VPN connection from the facility network to the VPC so that sensor data can be written directly to an S3 bucket by way of the VPC endpoint.
+
+
+## Question #324
 
 A company wants to implement a disaster recovery plan for its primary on-premises file storage volume. The file storage volume is mounted from an Internet Small Computer Systems Interface (iSCSI) device on a local storage server. The file storage volume holds hundreds of terabytes (TB) of data.
 
@@ -3955,7 +3967,7 @@ What should a solutions architect do to meet these requirements?
 - C. Create a database snapshot that uses a different AWS managed KMS key. Add the acquiring company's AWS account to the KMS key alias. Share the snapshot with the acquiring company's AWS account.
 - D. Create a database snapshot. Download the database snapshot. Upload the database snapshot to an Amazon S3 bucket. Update the S3 bucket policy to allow access from the acquiring company's AWS account.
 
-## Question #350
+## Question #350 ✨✨✨
 
 
 A company uses a 100 GB Amazon RDS for Microsoft SQL Server Single-AZ DB instance in the us-east-1 Region to store customer transactions. The company needs high availability and automatic recovery for the DB instance.
@@ -3969,6 +3981,10 @@ Which combination of steps will meet these requirements? (Choose two.)
 - C. Create a read replica of the DB instance in a different Availability Zone. Point all requests for reports to the read replica.
 - D. Migrate the database to RDS Custom.
 - E. Use RDS Proxy to limit reporting requests to the maintenance window.
+
+
+## Question #351
+
 
 A company is moving its data management application to AWS. The company wants to transition to an event-driven architecture. The architecture needs to be more distributed and to use serverless concepts while performing the different aspects of the workow. The company also wants to minimize operational overhead.
 
@@ -4005,6 +4021,9 @@ Which solution will meet these requirements MOST cost-effectively?
 - C. Use Amazon S3 Intelligent-Tiering access tiers.
 - D. Use two large EC2 instances to host the database in active-passive mode.
 
+## Question #354
+
+
 A company hosts a serverless application on AWS. The application uses Amazon API Gateway, AWS Lambda, and an Amazon RDS for PostgreSQL database. The company notices an increase in application errors that result from database connection timeouts during times of peak traffic or unpredictable traffic. The company needs a solution that reduces the application failures with the least amount of change to the code.
 
 What should a solutions architect do to meet these requirements?
@@ -4038,6 +4057,9 @@ Which storage solution will meet these requirements?
 - C. Move the data objects to S3 One Zone-Infrequent Access (S3 One Zone-IA) after 30 days.
 - D. Move the data objects to S3 One Zone-Infrequent Access (S3 One Zone-IA) immediately.
 
+
+## Question #357 
+
 A gaming company is moving its public scoreboard from a data center to the AWS Cloud. The company uses Amazon EC2 Windows Server instances behind an Application Load Balancer to host its dynamic application. The company needs a highly available storage solution for the application. The application consists of static files and dynamic server-side code.
 
 Which combination of steps should a solutions architect take to meet these requirements? (Choose two.)
@@ -4059,6 +4081,9 @@ Which solution will meet these requirements with the LEAST operational overhead?
 - B. Create a CloudFront origin request policy. Use the policy to automatically resize images and to serve the appropriate format based on the User-Agent HTTP header in the request.
 - C. Use a Lambda@Edge function with an external image management library. Associate the Lambda@Edge function with the CloudFront behaviors that serve the images.
 - D. Create a CloudFront response headers policy. Use the policy to automatically resize images and to serve the appropriate format based on the User-Agent HTTP header in the request.
+
+
+## Question #359
 
 A hospital needs to store patient records in an Amazon S3 bucket. The hospital's compliance team must ensure that all protected health information (PHI) is encrypted in transit and at rest. The compliance team must administer the encryption key for data at rest.
 
@@ -5675,7 +5700,7 @@ Which solution meets these requirements?
 - C. Configure Amazon DynamoDB Streams. Create an AWS Lambda function to consume the stream and export the data to an Amazon S3 bucket.
 - D. Create an AWS Lambda function to export the data from the database tables to Amazon S3 on a regular basis. Turn on point-in-time recovery for the table.
 
-## Question #491
+## Question #491 ✨✨✨
 
 
 A solutions architect is designing an asynchronous application to process credit card data validation requests for a bank. The application must be secure and be able to process each request at least once.
@@ -5700,6 +5725,10 @@ Which solution will meet these requirements with the LEAST development effort?
 - C. Configure an Amazon EventBridge rule that invokes an AWS Lambda function when an EC2 instance is created. Stop disallowed EC2 instance types.
 - D. Set up AWS Service Catalog products for the staff to create the allowed EC2 instance types. Ensure that staff can deploy EC2 instances only by using the Service Catalog products.
 
+
+## Question #493
+
+
 A company wants to use articial intelligence (AI) to determine the quality of its customer service calls. The company currently manages calls in four different languages, including English. The company will offer new languages in the future. The company does not have the resources to regularly maintain machine learning (ML) models.
 
 The company needs to create written sentiment analysis reports from the customer service call recordings. The customer service call recording text must be translated into English.
@@ -5712,6 +5741,9 @@ Which combination of steps will meet these requirements? (Choose three.)
 - D. Use Amazon Transcribe to convert the audio recordings in any language into text.
 - E. Use Amazon Translate to translate text in any language to English.
 - F. Use Amazon Comprehend to create the sentiment analysis reports.
+
+## Question #494
+
 
 A company uses Amazon EC2 instances to host its internal systems. As part of a deployment operation, an administrator tries to use the AWS CLI to terminate an EC2 instance. However, the administrator receives a 403 (Access Denied) error message.
 
@@ -5740,6 +5772,9 @@ Which solution will meet these requirements?
 - B. Configure Amazon S3 Inventory on the S3 bucket Configure Amazon Athena to query the inventory.
 - C. Configure Amazon Macie to run a data discovery job that uses managed identiers for the required data types.
 - D. Use Amazon S3 Select to run a report across the S3 bucket.
+
+## Question #496 ✨✨✨✨ *File Gateway → NFS storage. Volume Gateway → Block storage*
+
 
 A company uses on-premises servers to host its applications. The company is running out of storage capacity. The applications use both block storage and NFS storage. The company needs a high-performing solution that supports local caching without re-architecting its existing applications.
 
@@ -5776,6 +5811,8 @@ Which solution will reduce the S3 costs with the LEAST operational overhead?
 - B. Use an AWS Lambda function to check for older versions and delete all but the two most recent versions.
 - C. Use S3 Batch Operations to delete noncurrent object versions and retain only the two most recent versions.
 - D. Deactivate versioning on the S3 bucket and retain the two most recent versions.
+
+## Question #499
 
 A company needs to minimize the cost of its 1 Gbps AWS Direct Connect connection. The company's average connection utilization is less than 10%. A solutions architect must recommend a solution that will reduce the cost without compromising security.
 
