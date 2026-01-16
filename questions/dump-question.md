@@ -3831,6 +3831,9 @@ Which service should a solutions architect recommend?
 - C. Amazon Redshift Spectrum
 - D. Amazon RDS for MySQL
 
+## Question #315
+
+
 A company experienced a breach that affected several applications in its on-premises data center. The attacker took advantage of vulnerabilities in the custom applications that were running on the servers. The company is now migrating its applications to run on Amazon EC2 instances. The company wants to implement a solution that actively scans for vulnerabilities on the EC2 instances and sends a report that details the ndings.
 
 Which solution will meet these requirements?

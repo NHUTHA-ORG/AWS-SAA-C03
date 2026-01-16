@@ -1,4 +1,4 @@
-$SERVICE = AppFlow
+$SERVICE = Amazon CloudWatch
 
 Act as an AWS Solutions Architect & AWS Trainer.
 
@@ -81,6 +81,9 @@ Do NOT go too deep into low-level technical details.
 - 2–5 architecture pattern đơn giản, dùng emoji + keyword để dễ nhớ
 - Mô tả cực ngắn: bối cảnh ➝ dịch vụ chính ➝ flow tổng quan
 - Tập trung vào pattern hay xuất hiện trong đề thi hoặc thực tế (best practice)
+
+🧠 CHỨC NĂNG ĐẶC BIỆT (nếu có)
+- Liệt kê các tính năng đặc biệt thường bị sót khi ra thi
 
 GENERAL RULES
 - Write explanations in VIETNAMESE. (important)
