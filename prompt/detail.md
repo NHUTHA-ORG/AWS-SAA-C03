@@ -1,4 +1,4 @@
-$SERVICE = Amazon Cloud Trail
+$SERVICE = Snowball Edge
 
 Act as an AWS Solutions Architect & AWS Trainer.
 
